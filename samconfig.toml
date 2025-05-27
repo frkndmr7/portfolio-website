@@ -3,7 +3,6 @@ version = 0.1
 [default.deploy]
 [default.deploy.parameters]
 stack_name = "portfolio-website-stack"
-s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-123456"
 s3_prefix = "portfolio-website"
 region = "eu-west-1"
 confirm_changeset = false
