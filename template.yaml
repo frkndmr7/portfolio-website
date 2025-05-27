@@ -60,36 +60,25 @@ Resources:
         AllowOrigin: !Sub "'http://${BucketName}.s3-website-eu-west-1.amazonaws.com'"
 
   # S3 Bucket for Website
-  WebsiteBucket:
-    Type: AWS::S3::Bucket
-    Properties:
-      BucketName: !Ref BucketName
-      WebsiteConfiguration:
-        IndexDocument: index.html
-        ErrorDocument: error.html
-      PublicAccessBlockConfiguration:
-        BlockPublicAcls: false
-        BlockPublicPolicy: false
-        IgnorePublicAcls: false
-        RestrictPublicBuckets: false
+  
 
   # S3 Bucket Policy
   WebsiteBucketPolicy:
-    Type: AWS::S3::BucketPolicy
-    Properties:
-      Bucket: !Ref WebsiteBucket
-      PolicyDocument:
-        Statement:
-          - Sid: PublicReadGetObject
-            Effect: Allow
-            Principal: "*"
-            Action: s3:GetObject
-            Resource: !Sub "${WebsiteBucket}/*"
+  Type: AWS::S3::BucketPolicy
+  Properties:
+    Bucket: bitirmeproject  # Mevcut bucket'ı kullan
+    PolicyDocument:
+      Statement:
+        - Sid: PublicReadGetObject
+          Effect: Allow
+          Principal: "*"
+          Action: s3:GetObject
+          Resource: "arn:aws:s3:::bitirmeproject/*"
 
 Outputs:
   WebsiteURL:
     Description: URL for website hosted on S3
-    Value: !Sub "http://${WebsiteBucket}.s3-website-eu-west-1.amazonaws.com"
+    Value: "http://bitirmeproject.s3-website-eu-west-1.amazonaws.com"
   
   ApiGatewayUrl:
     Description: API Gateway endpoint URL
