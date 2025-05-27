@@ -15,17 +15,7 @@ Globals:
 
 Resources:
   # DynamoDB Table
-  VisitorCounterTable:
-    Type: AWS::DynamoDB::Table
-    Properties:
-      TableName: VisitorCounter
-      BillingMode: PAY_PER_REQUEST
-      AttributeDefinitions:
-        - AttributeName: pageId
-          AttributeType: S
-      KeySchema:
-        - AttributeName: pageId
-          KeyType: HASH
+  
 
   # Lambda Function
   VisitorCounterFunction:
@@ -36,11 +26,11 @@ Resources:
       Handler: visitor_counter.lambda_handler
       Environment:
         Variables:
-          TABLE_NAME: !Ref VisitorCounterTable
-          CORS_ORIGIN: !Sub "http://${BucketName}.s3-website-eu-west-1.amazonaws.com"
+          TABLE_NAME: VisitorCounter
+          CORS_ORIGIN: "http://bitirmeproject.s3-website-eu-west-1.amazonaws.com"
       Policies:
         - DynamoDBCrudPolicy:
-            TableName: !Ref VisitorCounterTable
+            TableName: VisitorCounter
       Events:
         Api:
           Type: Api
