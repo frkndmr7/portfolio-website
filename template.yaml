@@ -1,0 +1,96 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
+Description: Portfolio Website with Visitor Counter
+
+Parameters:
+  BucketName:
+    Type: String
+    Default: bitirmeproject
+    Description: S3 bucket name for website hosting
+
+Globals:
+  Function:
+    Timeout: 30
+    Runtime: python3.9
+
+Resources:
+  # DynamoDB Table
+  VisitorCounterTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: VisitorCounter
+      BillingMode: PAY_PER_REQUEST
+      AttributeDefinitions:
+        - AttributeName: pageId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: pageId
+          KeyType: HASH
+
+  # Lambda Function
+  VisitorCounterFunction:
+    Type: AWS::Serverless::Function
+    Properties:
+      FunctionName: VisitorCounterFunction
+      CodeUri: lambda/
+      Handler: visitor_counter.lambda_handler
+      Environment:
+        Variables:
+          TABLE_NAME: !Ref VisitorCounterTable
+          CORS_ORIGIN: !Sub "http://${BucketName}.s3-website-eu-west-1.amazonaws.com"
+      Policies:
+        - DynamoDBCrudPolicy:
+            TableName: !Ref VisitorCounterTable
+      Events:
+        Api:
+          Type: Api
+          Properties:
+            RestApiId: !Ref VisitorCounterApi
+            Path: /counter
+            Method: get
+
+  # API Gateway
+  VisitorCounterApi:
+    Type: AWS::Serverless::Api
+    Properties:
+      StageName: prod
+      Cors:
+        AllowMethods: "'GET,OPTIONS'"
+        AllowHeaders: "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'"
+        AllowOrigin: !Sub "'http://${BucketName}.s3-website-eu-west-1.amazonaws.com'"
+
+  # S3 Bucket for Website
+  WebsiteBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Ref BucketName
+      WebsiteConfiguration:
+        IndexDocument: index.html
+        ErrorDocument: error.html
+      PublicAccessBlockConfiguration:
+        BlockPublicAcls: false
+        BlockPublicPolicy: false
+        IgnorePublicAcls: false
+        RestrictPublicBuckets: false
+
+  # S3 Bucket Policy
+  WebsiteBucketPolicy:
+    Type: AWS::S3::BucketPolicy
+    Properties:
+      Bucket: !Ref WebsiteBucket
+      PolicyDocument:
+        Statement:
+          - Sid: PublicReadGetObject
+            Effect: Allow
+            Principal: "*"
+            Action: s3:GetObject
+            Resource: !Sub "${WebsiteBucket}/*"
+
+Outputs:
+  WebsiteURL:
+    Description: URL for website hosted on S3
+    Value: !Sub "http://${WebsiteBucket}.s3-website-eu-west-1.amazonaws.com"
+  
+  ApiGatewayUrl:
+    Description: API Gateway endpoint URL
+    Value: !Sub "https://${VisitorCounterApi}.execute-api.${AWS::Region}.amazonaws.com/prod/counter"
