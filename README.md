@@ -4,7 +4,7 @@ A personal portfolio website built with AWS serverless services as a learning pr
 
 ## 🌐 Live Demo
 
-**Website**: http://bitirmeproject.s3-website-eu-west-1.amazonaws.com
+**Website**: https://d32hiru88k6vq0.cloudfront.net
 
 ## 🎯 Project Overview
 
