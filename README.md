@@ -33,6 +33,7 @@ This project was created to learn AWS cloud services and modern web development 
 - How to host websites on AWS S3
 - Setting up custom domains
 - Understanding cloud storage
+Medium: https://medium.com/@halil.furkan3530/static-website-hosting-with-aws-s3-6953818d65d4
 
 ### Step 2: Database Setup (DynamoDB)
 **Goal**: Store visitor count data  
