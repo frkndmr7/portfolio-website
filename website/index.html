@@ -3,780 +3,985 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Halil Furkan Damar - Cloud Security</title>
+    <title>Halil Furkan Damar - Cloud Security Engineer</title>
     <style>
         :root {
-            --primary-color: #0d47a1;
-            --secondary-color: #e0e0e0;
-            --accent-color: #1e88e5;
-            --text-color: #333;
-            --light-bg: #f5f5f5;
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-primary: #1f2937;
+            --text-secondary: #6b7280;
+            --background: #ffffff;
+            --surface: #f8fafc;
+            --border: #e5e7eb;
+            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
-            color: var(--text-color);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            background-color: var(--light-bg);
+            color: var(--text-primary);
+            background-color: var(--background);
         }
-        
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 20px;
+            padding: 0 1.5rem;
         }
-        
-        /* Header Styles */
-        header {
-            background-color: var(--primary-color);
+
+        /* Header Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .header-content {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            background-color: #fff;
-            margin-bottom: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 48px;
-            color: var(--primary-color);
-        }
-        
-        .name {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-        
-        .title {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
-            font-weight: normal;
-        }
-        
-        .contact-info {
-            margin: 20px 0;
-        }
-        
-        .contact-info a {
-            color: white;
-            text-decoration: none;
-            margin: 0 10px;
-            display: inline-flex;
-            align-items: center;
-        }
-        
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-        
-        .social-links {
-            margin-top: 15px;
-        }
-        
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: white;
-            text-decoration: none;
-            padding: 8px 15px;
-            border: 1px solid white;
-            border-radius: 20px;
-            transition: all 0.3s;
-        }
-        
-        .social-links a:hover {
-            background-color: white;
-            color: var(--primary-color);
-        }
-        
-        /* Navigation */
-        nav {
-            background-color: white;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .nav-container {
-            display: flex;
-            justify-content: center;
-        }
-        
-        nav a {
-            color: var(--text-color);
-            text-decoration: none;
-            padding: 20px 15px;
-            display: inline-block;
-            font-weight: 500;
+            padding: 4rem 0;
             position: relative;
+            overflow: hidden;
         }
-        
-        nav a:after {
+
+        .hero::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            width: 0%;
-            height: 3px;
-            background-color: var(--accent-color);
-            transition: width 0.3s;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="7" cy="7" r="2"/></g></svg>');
         }
-        
-        nav a:hover:after {
-            width: 100%;
-        }
-        
-        /* Section Styles */
-        section {
-            padding: 60px 0;
-        }
-        
-        section:nth-child(odd) {
-            background-color: white;
-        }
-        
-        .section-title {
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
             text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
+        }
+
+        .hero-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 2.5rem;
+            font-weight: bold;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            letter-spacing: -0.025em;
+        }
+
+        .hero .subtitle {
+            font-size: 1.25rem;
+            margin-bottom: 1rem;
+            opacity: 0.9;
+        }
+
+        .hero .location {
+            font-size: 1rem;
+            opacity: 0.8;
+            margin-bottom: 2rem;
+        }
+
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: white;
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 0.5rem;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-link:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+
+        /* Visitor Counter */
+        .visitor-counter-section {
+            background: var(--surface);
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .visitor-counter {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+        }
+
+        .visitor-count {
+            font-weight: 700;
             color: var(--primary-color);
+            font-size: 1.5rem;
         }
-        
-        .section-title:after {
+
+        /* Navigation */
+        .nav {
+            background: var(--background);
+            border-bottom: 1px solid var(--border);
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(10px);
+        }
+
+        .nav-content {
+            display: flex;
+            justify-content: center;
+            padding: 1rem 0;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .nav-link {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 0.375rem;
+            transition: all 0.3s ease;
+        }
+
+        .nav-link:hover {
+            color: var(--primary-color);
+            background: var(--surface);
+        }
+
+        /* Section Styles */
+        .section {
+            padding: 4rem 0;
+        }
+
+        .section:nth-child(even) {
+            background: var(--surface);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: var(--text-primary);
+            position: relative;
+        }
+
+        .section-title::after {
             content: '';
-            display: block;
-            width: 60px;
+            position: absolute;
+            bottom: -0.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4rem;
             height: 3px;
-            background-color: var(--accent-color);
-            margin: 15px auto;
+            background: var(--primary-color);
+            border-radius: 2px;
         }
-        
+
         /* About Section */
         .about-content {
             max-width: 800px;
             margin: 0 auto;
             text-align: center;
-            font-size: 1.1rem;
+            font-size: 1.125rem;
+            line-height: 1.7;
+            color: var(--text-secondary);
         }
-        
-        /* Experience Section */
+
+        /* Experience Timeline */
         .timeline {
-            position: relative;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .timeline::after {
-            content: '';
-            position: absolute;
-            width: 3px;
-            background-color: var(--secondary-color);
-            top: 0;
-            bottom: 0;
-            left: 50%;
-            margin-left: -1.5px;
-        }
-        
-        .timeline-item {
-            padding: 10px 40px;
-            position: relative;
-            width: 50%;
-        }
-        
-        .timeline-item::after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            right: -10px;
-            background-color: white;
-            border: 3px solid var(--accent-color);
-            top: 15px;
-            border-radius: 50%;
-            z-index: 1;
-        }
-        
-        .left {
-            left: 0;
-        }
-        
-        .right {
-            left: 50%;
-        }
-        
-        .right::after {
-            left: -10px;
-        }
-        
-        .timeline-content {
-            padding: 20px;
-            background-color: white;
-            border-radius: 6px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .timeline-content h3 {
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-        
-        .timeline-date {
-            color: #888;
-            font-style: italic;
-        }
-        
-        /* Skills Section */
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
             max-width: 900px;
             margin: 0 auto;
+            position: relative;
         }
-        
-        .skill-category {
-            flex: 1 1 300px;
-            background-color: white;
-            border-radius: 8px;
-            padding: 20px;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background: var(--border);
+            transform: translateX(-50%);
         }
-        
-        .skill-category h3 {
+
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+            width: 100%;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content {
+            margin-left: 0;
+            margin-right: auto;
+            max-width: calc(50% - 2rem);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content {
+            margin-left: auto;
+            margin-right: 0;
+            max-width: calc(50% - 2rem);
+        }
+
+        .timeline-content {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) .timeline-content::before {
+            content: '';
+            position: absolute;
+            right: -0.5rem;
+            top: 1.5rem;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-left-color: var(--background);
+        }
+
+        .timeline-item:nth-child(even) .timeline-content::before {
+            content: '';
+            position: absolute;
+            left: -0.5rem;
+            top: 1.5rem;
+            width: 0;
+            height: 0;
+            border: 8px solid transparent;
+            border-right-color: var(--background);
+        }
+
+        .timeline-dot {
+            position: absolute;
+            left: 50%;
+            top: 1.5rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--primary-color);
+            border-radius: 50%;
+            transform: translateX(-50%);
+            border: 3px solid var(--background);
+            box-shadow: var(--shadow);
+        }
+
+        .timeline-title {
+            font-size: 1.25rem;
+            font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid var(--secondary-color);
+            margin-bottom: 0.5rem;
         }
-        
-        .skill-item {
-            margin-bottom: 15px;
+
+        .timeline-company {
+            font-weight: 500;
+            color: var(--text-primary);
+            margin-bottom: 0.25rem;
         }
-        
-        .skill-name {
-            display: flex;
-            justify-content: space-between;
-            margin-bottom: 5px;
+
+        .timeline-date {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
         }
-        
-        .skill-bar {
-            height: a8px;
-            background-color: var(--secondary-color);
-            border-radius: 4px;
-            overflow: hidden;
+
+        .timeline-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
         }
-        
-        .skill-level {
-            height: 100%;
-            background-color: var(--accent-color);
-        }
-        
-        /* Projects Section */
-        .projects-grid {
+
+        /* Skills Grid */
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
             max-width: 1000px;
             margin: 0 auto;
         }
-        
-        .project-card {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
+
+        .skill-category {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
         }
-        
-        .project-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .project-img {
-            height: 180px;
-            background-color: var(--primary-color);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 3rem;
-        }
-        
-        .project-content {
-            padding: 20px;
-        }
-        
-        .project-content h3 {
+
+        .skill-category h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 10px;
+            margin-bottom: 1.5rem;
+            text-align: center;
         }
-        
-        .project-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: var(--accent-color);
-            text-decoration: none;
+
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.75rem;
+        }
+
+        .skill-tag {
+            background: var(--surface);
+            color: var(--text-primary);
+            padding: 0.5rem 1rem;
+            border-radius: 1.5rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            border: 1px solid var(--border);
+        }
+
+        /* Projects Grid */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .project-card {
+            background: var(--background);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+
+        .project-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+        }
+
+        .project-header {
+            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
+            color: white;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .project-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-tag {
+            background: var(--surface);
+            color: var(--primary-color);
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.75rem;
             font-weight: 500;
         }
-        
+
+        .project-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
         .project-link:hover {
             text-decoration: underline;
         }
-        
-        /* Certificates Section */
-        .certificates-list {
-            max-width: 800px;
+
+        /* Certificates */
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            max-width: 1000px;
             margin: 0 auto;
-        }
-        
-        .certificate-item {
-            background-color: white;
-            margin-bottom: 20px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: center;
-        }
-        
-        .certificate-icon {
-            font-size: 2rem;
-            margin-right: 20px;
-            color: var(--accent-color);
-        }
-        
-        .certificate-info h3 {
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-        
-        .certificate-issuer {
-            color: #666;
-            font-style: italic;
-        }
-        
-        /* Education Section */
-        .education-container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .education-item {
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 3px 15px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        
-        .education-item h3 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        
-        .education-period {
-            color: #666;
-            font-style: italic;
-            margin-bottom: 15px;
-        }
-        
-        /* Contact Section */
-        .contact-container {
-            max-width: 600px;
-            margin: 0 auto;
-            text-align: center;
-        }
-        
-        .contact-item {
-            margin: 20px 0;
-            font-size: 1.1rem;
-        }
-        
-        .contact-item a {
-            color: var(--accent-color);
-            text-decoration: none;
-        }
-        
-        .contact-item a:hover {
-            text-decoration: underline;
-        }
-        
-        /* Footer */
-        footer {
-            background-color: var(--primary-color);
-            color: white;
-            text-align: center;
-            padding: 30px 0;
-        }
-        
-        .footer-text {
-            margin-bottom: 15px;
-        }
-        
-        .footer-links a {
-            color: white;
-            margin: 0 10px;
-            text-decoration: none;
-        }
-        
-        .footer-links a:hover {
-            text-decoration: underline;
         }
 
-        .counter-container {
+        .certificate-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
             text-align: center;
-            width: 100%;
-            margin: 40px auto;
         }
-        
-        /* Sayaç tasarımı */
-        .visitor-counter {
-            display: inline-block;
-            padding: 20px 35px;
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            font-size: 30px;
+
+        .certificate-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
         }
-        
-        .visitor-counter span {
-            font-weight: bold;
-            color: #3498db;
-            font-size: 45px;
+
+        .certificate-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
         }
-        
+
+        .certificate-issuer {
+            color: var(--text-secondary);
+            font-style: italic;
+        }
+
+        /* Education */
+        .education-card {
+            background: var(--background);
+            padding: 3rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .education-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-degree {
+            font-size: 1.125rem;
+            color: var(--text-primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .education-period {
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+        }
+
+        .education-details {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .education-detail {
+            text-align: center;
+        }
+
+        .education-detail-label {
+            font-size: 0.875rem;
+            color: var(--text-secondary);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .education-detail-value {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        /* Languages */
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .language-card {
+            background: var(--background);
+            padding: 2rem;
+            border-radius: 0.75rem;
+            box-shadow: var(--shadow);
+            border: 1px solid var(--border);
+            text-align: center;
+        }
+
+        .language-name {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+        }
+
+        .language-level {
+            color: var(--text-secondary);
+        }
+
+        /* Footer */
+        .footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .footer-link {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .footer-link:hover {
+            opacity: 0.8;
+        }
+
+        .footer-copyright {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.875rem;
+        }
+
         /* Responsive Design */
         @media (max-width: 768px) {
-            .timeline::after {
-                left: 31px;
+            .hero h1 {
+                font-size: 2rem;
             }
-            
-            .timeline-item {
-                width: 100%;
-                padding-left: 70px;
-                padding-right: 25px;
+
+            .hero .subtitle {
+                font-size: 1.125rem;
             }
-            
-            .timeline-item::after {
-                left: 21px;
+
+            .timeline::before {
+                left: 1rem;
             }
-            
-            .right {
-                left: 0;
+
+            .timeline-item:nth-child(odd) .timeline-content,
+            .timeline-item:nth-child(even) .timeline-content {
+                margin-left: 3rem;
+                margin-right: 0;
+                max-width: calc(100% - 3rem);
             }
-            
-            .skill-category {
-                flex: 0 0 100%;
+
+            .timeline-item:nth-child(odd) .timeline-content::before,
+            .timeline-item:nth-child(even) .timeline-content::before {
+                left: -0.5rem;
+                border-left-color: transparent;
+                border-right-color: var(--background);
             }
-            
-            .projects-grid {
-                grid-template-columns: 1fr;
+
+            .timeline-dot {
+                left: 1rem;
+            }
+
+            .nav-links {
+                gap: 1rem;
+            }
+
+            .contact-links {
+                gap: 1rem;
+            }
+
+            .education-details {
+                gap: 1rem;
             }
         }
     </style>
-     
 </head>
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="container header-content">
-            <div class="profile-img">HF</div>
-            <h1 class="name">Halil Furkan Damar</h1>
-            <h2 class="title">Computer Engineering Student</h2>
-            <div class="contact-info">
-                <a href="mailto:halilfurkandamar@gmail.com">halilfurkandamar@gmail.com</a> |
-                <a href="tel:+905075682581">+90 507 568 25 81</a>
-            </div>
-            <div class="social-links">
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://github.com/frkndmr7" target="_blank">GitHub</a>
-                <a href="https://medium.com/@halil.furkan3530" target="_blank">Medium</a>
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-avatar">HF</div>
+                <h1>Halil Furkan Damar</h1>
+                <p class="subtitle"></p>
+                <p class="location">📍 İstanbul, Turkey</p>
+                <div class="contact-links">
+                    <a href="mailto:halilfurkandamar@gmail.com" class="contact-link">
+                        📧 Email
+                    </a>
+                    <a href="tel:+905075682581" class="contact-link">
+                        📞 +90 507 568 2581
+                    </a>
+                    <a href="https://linkedin.com/in/halilfurkandamar" target="_blank" class="contact-link">
+                        💼 LinkedIn
+                    </a>
+                    <a href="https://github.com/frkndmr7" target="_blank" class="contact-link">
+                        🔗 GitHub
+                    </a>
+                    <a href="https://medium.com/@halil.furkan3530" target="_blank" class="contact-link">
+                        ✍️ Medium
+                    </a>
+                </div>
             </div>
         </div>
-    </header>
+    </section>
 
-    <div class="counter-container">
-           <div class="visitor-counter">Bu sayfayı <span id="visitor-counter">0</span> kişi ziyaret etti.</div> 
-    </div>
-    
+    <!-- Visitor Counter -->
+    <section class="visitor-counter-section">
+        <div class="container">
+            <div class="visitor-counter">
+                This page has been visited by <span id="visitor-counter" class="visitor-count">0</span> people
+            </div>
+        </div>
+    </section>
+
     <!-- Navigation -->
-    <nav>
-        <div class="container nav-container">
-            <a href="#about">About</a>
-            <a href="#experience">Experience</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#certificates">Certificates</a>
-            <a href="#education">Education</a>
-            <a href="#contact">Contact</a>
+    <nav class="nav">
+        <div class="container">
+            <div class="nav-content">
+                <div class="nav-links">
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#experience" class="nav-link">Experience</a>
+                    <a href="#skills" class="nav-link">Skills</a>
+                    <a href="#projects" class="nav-link">Projects</a>
+                    <a href="#certificates" class="nav-link">Certificates</a>
+                    <a href="#education" class="nav-link">Education</a>
+                    <a href="#languages" class="nav-link">Languages</a>
+                </div>
+            </div>
         </div>
     </nav>
-    
+
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="section">
         <div class="container">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
-                <p>I began my career in front-end development and subsequently transitioned to
-                the cybersecurity field. With my growing interest in cloud computing, I
-                began developing my skills in this area.</p>
-                <p>Currently, my career goal is focused on Cloud Security. I am committed to immersing myself in all processes that will lead me toward this objective and dedicated to giving my absolute best effort in this journey.</p>
+                <p>I started my career in front-end development, and after my second year at university, I decided to progress in cybersecurity. With my growing interest in cloud computing, I began developing my skills in this area.</p>
+                <br>
+                <p>Therefore, I am interested in all roles related to <strong>Cloud and Cloud Security</strong>. I am committed to actively engaging in all processes that support this goal and giving my best effort throughout the journey.</p>
             </div>
         </div>
     </section>
-    
+
     <!-- Experience Section -->
-    <section id="experience">
+    <section id="experience" class="section">
         <div class="container">
             <h2 class="section-title">Experience & Training</h2>
             <div class="timeline">
-                <div class="timeline-item left">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Cyber Security Intern</h3>
-                        <p class="timeline-date">DİSTİ BİLİŞİM, Summer 2024 (1 Month)</p>
-                        <p>During the internship, I worked on a software program called SIEM Plus. SIEM Plus is an advanced security management tool that collects and analyzes security events, detects threats and responds automatically.</p>
+                        <h3 class="timeline-title">Cyber Security Intern</h3>
+                        <p class="timeline-company">Disti Bilişim</p>
+                        <p class="timeline-date">July 2024 - August 2024</p>
+                        <p class="timeline-description">I received training on the SIEM Plus product, one of the products distributed by the company, and had the opportunity to observe the product in action.</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+                
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Cyber Security Intern</h3>
-                        <p class="timeline-date">ECODATION, Summer 2023 (1 Month)</p>
-                        <p>I documented and created comprehensive reports on the topics I learned during my internship (ISO 27001, Active Directory, Firewall, etc). You can review the project on my GitHub account.</p>
+                        <h3 class="timeline-title">Cyber Security Intern</h3>
+                        <p class="timeline-company">Ecodation</p>
+                        <p class="timeline-date">August 2023 - September 2023</p>
+                        <p class="timeline-description">I documented and created comprehensive reports on the topics I learned during my internship (ISO 27001, Active Directory, Firewall, etc).</p>
                     </div>
                 </div>
-                <div class="timeline-item left">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Teknolojide Güvenlik Akademisi</h3>
-                        <p class="timeline-date">Garanti Technology, Jan 2025 - Present</p>
-                        <p>I received training as 101 and 201 modules within the scope of Security Academy in Technology. The program is ongoing. In terms of content, I have received in-depth courses in areas such as Data, Endpoint, IAM, Anti-Fraud, Defensive&Offensive, Cloud, Application Security.</p>
+                        <h3 class="timeline-title">Technology Security Academy</h3>
+                        <p class="timeline-company">Garanti Technology</p>
+                        <p class="timeline-date">January 2025 - March 2025</p>
+                        <p class="timeline-description">I have received in-depth courses in areas such as Data Security, Endpoint Security, IAM, Anti-Fraud, Defensive & Offensive Security, Cloud Security, Application Security, SIEM, SOAR, CTI, Network Security, and Cryptology.</p>
                     </div>
                 </div>
-                <div class="timeline-item right">
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
                     <div class="timeline-content">
-                        <h3>Cyber Security Analyst Program</h3>
-                        <p class="timeline-date">Akbank Youth Academy, Jan 2025 - Present</p>
-                        <p>A program consisting of Cyber Security Fundamentals, Linux, Network, CyberOps courses. Currently continuing with Network courses.</p>
+                        <h3 class="timeline-title">Cyber Security Analyst Program</h3>
+                        <p class="timeline-company">Akbank Youth Academy</p>
+                        <p class="timeline-date">January 2025 - May 2025</p>
+                        <p class="timeline-description">A comprehensive program consisting of Cyber Security Fundamentals, Linux, Network, and CyberOps courses.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3 class="timeline-title">Huawei Cloud DevOps Bootcamp</h3>
+                        <p class="timeline-company">Huawei</p>
+                        <p class="timeline-date">May 2025 - August 2025</p>
+                        <p class="timeline-description">A 12-week intensive DevOps training program organized by Huawei, focusing on cloud technologies and automation.</p>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-    
-    <!-- Skills Section -->
-    <section id="skills">
-        <div class="container">
-            <h2 class="section-title">Skills</h2>
-            <div class="skills-container">
-                <div class="skill-category">
-                    <h3>Cloud Technologies</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span><b>AWS</b></span>
-                        </div>
-                        <ul>
-                            <li>S3 Static Website Hosting</li>
-                            <li>EC2 Fundamentals</li>
-                            <li>IAM Fundamentals</li>
-                            <li>VPC Fundamentals</li>
-                        </ul>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span><b>Azure</b></span>
-                        </div>
-                        <ul>
-                            <li>App Service</li>
-                            <li>Azure Fundamentals (AZ-900 Certified)</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Security</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Network Fundamentals</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Linux Terminal</span>
-                        </div>
-                    </div>
-                    
-                    
-                </div>
-                
-                <div class="skill-category">
-                    <h3>Development</h3>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>JavaScript</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Python</span>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-name">
-                            <span>Git & GitHub</span>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="container">
-            <h2 class="section-title">Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-img">AI</div>
-                    <div class="project-content">
-                        <h3>Teknofest 2024 (TUNGA)</h3>
-                        <p>Artificial intelligence-supported information guessing game. This project will first be presented as a web application.</p>
-                        <p><strong>Roles:</strong> Project Leader, Frontend Developer</p>
-                        <p>I also made the final presentation of the project.</p>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">AWS</div>
-                    <div class="project-content">
-                        <h3>S3 Static Web Hosting</h3>
-                        <p>Created a static website for my portfolio using HTML and CSS, and hosted it on AWS S3.</p>
-                        <p>After creating a Bucket and uploading the files, I chose the S3 Standard storage class. I made the Bucket publicly accessible and enabled Static Web Hosting.</p>
-                        <a href="http://testfrkn.s3-website-us-east-1.amazonaws.com/" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <div class="project-img">WP</div>
-                    <div class="project-content">
-                        <h3>WordPress on Azure App Service</h3>
-                        <p>Created a WordPress site via Azure App Service and explained the step-by-step process.</p>
-                        <a href="https://hfurkandamar.azurewebsites.net/wordpress-on-azure/" class="project-link" target="_blank">View Project</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Certificates Section -->
-    <section id="certificates">
-        <div class="container">
-            <h2 class="section-title">Certificates</h2>
-            <div class="certificates-list">
-                <div class="certificate-item">
-                    <div class="certificate-icon">🏆</div>
-                    <div class="certificate-info">
-                        <h3>Microsoft Certified: Azure Fundamentals (AZ-900)</h3>
-                        <p class="certificate-issuer">MICROSOFT</p>
-                    </div>
-                </div>
-                
-                <div class="certificate-item">
-                    <div class="certificate-icon">🏆</div>
-                    <div class="certificate-info">
-                        <h3>Teknolojide Güvenlik Akademisi 101 Modül Sertifikası</h3>
-                        <p class="certificate-issuer">GARANTİ BBVA</p>
-                    </div>
-                </div>
-                
-                <div class="certificate-item">
-                    <div class="certificate-icon">🏆</div>
-                    <div class="certificate-info">
-                        <h3>Teknolojide Güvenlik Akademisi 201 Modül Sertifikası</h3>
-                        <p class="certificate-issuer">GARANTİ BBVA</p>
-                    </div>
-                </div>
-                
-                <div class="certificate-item">
-                    <div class="certificate-icon">🏆</div>
-                    <div class="certificate-info">
-                        <h3>Teknofest 2024 Başarı Sertifikası</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    
-    <!-- Education Section -->
-    <section id="education">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-container">
-                <div class="education-item">
-                    <h3>Konya Food & Agriculture University</h3>
-                    <p class="education-period">2020 - 2025 (Expected July)</p>
-                    <p><strong>Degree:</strong> Bachelor of Science in Computer Engineering</p>
-                    <p><strong>GPA:</strong> 3.12</p>
-                    <p><strong>Additional:</strong> 1 year preparatory school</p>
-                </div>
-            </div>
-        </div>
-        
     </section>
 
-    
-    
-    <!-- Contact Section -->
-    <section id="contact">
+    <!-- Skills Section -->
+    <section id="skills" class="section">
         <div class="container">
-            <h2 class="section-title">Contact Me</h2>
-            <div class="contact-container">
-                <div class="contact-item">
-                    <strong>Email:</strong> <a href="mailto:halilfurkandamar@gmail.com">halilfurkandamar@gmail.com</a>
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>☁️ Cloud Platforms</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">AWS EC2</span>
+                        <span class="skill-tag">AWS S3</span>
+                        <span class="skill-tag">AWS IAM</span>
+                        <span class="skill-tag">AWS VPC</span>
+                        <span class="skill-tag">AWS Lambda</span>
+                        <span class="skill-tag">Azure Fundamentals</span>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <strong>Phone:</strong> <a href="tel:+905075682581">+90 507 568 25 81</a>
+
+                <div class="skill-category">
+                    <h3>🛡️ Security & Networking</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">TCP/IP</span>
+                        <span class="skill-tag">DNS</span>
+                        <span class="skill-tag">Routing</span>
+                        <span class="skill-tag">Subnetting</span>
+                        <span class="skill-tag">Firewall</span>
+                        <span class="skill-tag">SIEM</span>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <strong>GitHub:</strong> <a href="https://github.com/frkndmr7" target="_blank">github.com/frkndmr7</a>
+
+                <div class="skill-category">
+                    <h3>🐧 Systems & DevOps</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Linux</span>
+                        <span class="skill-tag">Docker</span>
+                        <span class="skill-tag">Kubernetes</span>
+                        <span class="skill-tag">Bash</span>
+                        <span class="skill-tag">System Administration</span>
+                    </div>
                 </div>
-                <div class="contact-item">
-                    <strong>Medium:</strong> <a href="https://medium.com/@halil.furkan3530" target="_blank">medium.com/@halil.furkan3530</a>
+
+                <div class="skill-category">
+                    <h3>💻 Development</h3>
+                    <div class="skill-tags">
+                        <span class="skill-tag">Python</span>
+                        <span class="skill-tag">JavaScript</span>
+                        <span class="skill-tag">Git & GitHub</span>
+                        <span class="skill-tag">Scripting</span>
+                        <span class="skill-tag">Automation</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    
-    <!-- Footer -->
-    <footer>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
         <div class="container">
-            <p class="footer-text">© 2025 Halil Furkan Damar - Cloud Security Professional</p>
-            <div class="footer-links">
-                <a href="https://linkedin.com" target="_blank">LinkedIn</a>
-                <a href="https://github.com/frkndmr7" target="_blank">GitHub</a>
-                <a href="https://medium.com/@halil.furkan3530" target="_blank">Medium</a>
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">☁️</div>
+                        <h3 class="project-title">Cloud Resume Challenge</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">A full-stack serverless portfolio website hosted on AWS, implementing modern cloud architecture patterns with CI/CD pipeline.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">CloudFront</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">Lambda</span>
+                            <span class="tech-tag">API Gateway</span>
+                            <span class="tech-tag">GitHub Actions</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🐳</div>
+                        <h3 class="project-title">Microservices Calculator</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">A modular microservices-based calculation platform featuring arithmetic, statistical analysis, and unit conversion services with containerized deployment.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">Kubernetes</span>
+                            <span class="tech-tag">Ansible</span>
+                            <span class="tech-tag">Microservices</span>
+                            <span class="tech-tag">REST API</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <div class="project-icon">🤖</div>
+                        <h3 class="project-title">Teknofest 2024 (TUNGA)</h3>
+                    </div>
+                    <div class="project-content">
+                        <p class="project-description">AI-powered information guessing game developed for Teknofest 2024. Served as project leader and frontend developer, delivering final presentation.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Artificial Intelligence</span>
+                            <span class="tech-tag">Frontend Development</span>
+                            <span class="tech-tag">Project Management</span>
+                            <span class="tech-tag">Machine Learning</span>
+                        </div>
+                        <a href="#" class="project-link">View Project →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Certificates Section -->
+    <section id="certificates" class="section">
+        <div class="container">
+            <h2 class="section-title">Certificates & Achievements</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <div class="certificate-icon">🏆</div>
+                    <h3 class="certificate-title">Microsoft Certified: Azure Fundamentals</h3>
+                    <p class="certificate-issuer">Microsoft (AZ-900)</p>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">🛡️</div>
+                    <h3 class="certificate-title">CyberOps Associate</h3>
+                    <p class="certificate-issuer">Cisco</p>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">🌐</div>
+                    <h3 class="certificate-title">CCNA: Introduction to Networks</h3>
+                    <p class="certificate-issuer">Cisco</p>
+                </div>
+
+                <div class="certificate-card">
+                    <div class="certificate-icon">🔒</div>
+                    <h3 class="certificate-title">Technology Security Academy 301</h3>
+                    <p class="certificate-issuer">Garanti Technology</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="education-card">
+                <h3 class="education-title">Konya Food And Agriculture University</h3>
+                <p class="education-degree">Bachelor of Science in Computer Engineering</p>
+                <p class="education-period">September 2020 - July 2025</p>
+                <div class="education-details">
+                    <div class="education-detail">
+                        <p class="education-detail-label">GPA</p>
+                        <p class="education-detail-value">3.19</p>
+                    </div>
+                    <div class="education-detail">
+                        <p class="education-detail-label">Preparation</p>
+                        <p class="education-detail-value">1 Year English</p>
+                    </div>
+                    <div class="education-detail">
+                        <p class="education-detail-label">Status</p>
+                        <p class="education-detail-value">Graduated</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Languages Section -->
+    <section id="languages" class="section">
+        <div class="container">
+            <h2 class="section-title">Languages</h2>
+            <div class="languages-grid">
+                <div class="language-card">
+                    <h3 class="language-name">🇹🇷 Turkish</h3>
+                    <p class="language-level">Native</p>
+                </div>
+                <div class="language-card">
+                    <h3 class="language-name">🇺🇸 English</h3>
+                    <p class="language-level">Professional Working Proficiency</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <h3 class="footer-title">Let's Connect</h3>
+                <div class="footer-links">
+                    <a href="mailto:halilfurkandamar@gmail.com" class="footer-link">Email</a>
+                    <a href="https://linkedin.com/in/halilfurkandamar" target="_blank" class="footer-link">LinkedIn</a>
+                    <a href="https://github.com/frkndmr7" target="_blank" class="footer-link">GitHub</a>
+                    <a href="https://medium.com/@halil.furkan3530" target="_blank" class="footer-link">Medium</a>
+                </div>
+                <p class="footer-copyright">© 2025 Halil Furkan Damar.</p>
             </div>
         </div>
     </footer>
+
     <script src="app.js"></script>
 </body>
 </html>
-
