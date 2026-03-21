@@ -4,56 +4,73 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Halil Furkan Damar - Cloud Security Engineer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #3b82f6;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --background: #ffffff;
-            --surface: #f8fafc;
-            --border: #e5e7eb;
-            --shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --navy:       #1a2744;
+            --navy-mid:   #243360;
+            --navy-light: #2e4080;
+            --orange:     #e8713c;
+            --orange-soft:#f0956a;
+            --orange-pale:#fde8da;
+            --cream:      #fdf8f4;
+            --white:      #ffffff;
+            --text-dark:  #1a2744;
+            --text-mid:   #4a5578;
+            --text-light: #8a96b8;
+            --border:     #e8edf8;
+            --shadow-sm:  0 2px 8px rgba(26,39,68,0.07);
+            --shadow-md:  0 6px 24px rgba(26,39,68,0.10);
+            --shadow-lg:  0 16px 48px rgba(26,39,68,0.13);
         }
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--background);
+            font-family: 'DM Sans', sans-serif;
+            line-height: 1.65;
+            color: var(--text-dark);
+            background: var(--cream);
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 0 1.5rem;
+            padding: 0 1.75rem;
         }
 
-        /* Header Section */
+        /* ── HERO ── */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-            color: white;
-            padding: 4rem 0;
+            background: var(--navy);
+            color: var(--white);
+            padding: 5rem 0 4rem;
             position: relative;
             overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            right: -120px;
+            top: -120px;
+            width: 500px;
+            height: 500px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(232,113,60,0.18) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23ffffff" fill-opacity="0.05"><circle cx="7" cy="7" r="2"/></g></svg>');
+            left: -80px;
+            bottom: -100px;
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(46,64,128,0.5) 0%, transparent 70%);
+            pointer-events: none;
         }
 
         .hero-content {
@@ -63,321 +80,290 @@
         }
 
         .hero-avatar {
-            width: 120px;
-            height: 120px;
+            width: 96px;
+            height: 96px;
             border-radius: 50%;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border: 3px solid rgba(255, 255, 255, 0.2);
+            background: linear-gradient(135deg, var(--orange) 0%, var(--orange-soft) 100%);
             display: flex;
             align-items: center;
             justify-content: center;
             margin: 0 auto 2rem;
-            font-size: 2.5rem;
-            font-weight: bold;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2rem;
+            color: var(--white);
+            box-shadow: 0 0 0 6px rgba(232,113,60,0.2);
         }
 
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.8rem;
+            font-weight: 400;
+            letter-spacing: -0.01em;
             margin-bottom: 0.5rem;
-            letter-spacing: -0.025em;
         }
 
         .hero .subtitle {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
+            font-size: 1.05rem;
+            color: var(--orange-soft);
+            font-weight: 500;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
         }
 
         .hero .location {
-            font-size: 1rem;
-            opacity: 0.8;
-            margin-bottom: 2rem;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.55);
+            margin-bottom: 2.25rem;
         }
 
         .contact-links {
             display: flex;
             justify-content: center;
-            gap: 1.5rem;
+            gap: 0.75rem;
             flex-wrap: wrap;
         }
 
         .contact-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: white;
+            gap: 0.4rem;
+            color: rgba(255,255,255,0.85);
             text-decoration: none;
-            padding: 0.75rem 1.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            border-radius: 0.5rem;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
+            padding: 0.55rem 1.15rem;
+            border: 1px solid rgba(255,255,255,0.15);
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 500;
+            background: rgba(255,255,255,0.06);
+            transition: all 0.25s ease;
         }
 
         .contact-link:hover {
-            background: rgba(255, 255, 255, 0.2);
+            background: var(--orange);
+            border-color: var(--orange);
+            color: var(--white);
             transform: translateY(-2px);
         }
 
-        /* Visitor Counter */
+        /* ── VISITOR COUNTER ── */
         .visitor-counter-section {
-            background: var(--surface);
-            padding: 2rem 0;
-            border-bottom: 1px solid var(--border);
+            background: var(--navy-mid);
+            padding: 1.25rem 0;
         }
 
         .visitor-counter {
             text-align: center;
-            font-size: 1.1rem;
-            color: var(--text-secondary);
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.5);
         }
 
         .visitor-count {
             font-weight: 700;
-            color: var(--primary-color);
-            font-size: 1.5rem;
+            color: var(--orange-soft);
+            font-size: 1.1rem;
         }
 
-        /* Navigation */
+        /* ── NAV ── */
         .nav {
-            background: var(--background);
+            background: var(--white);
             border-bottom: 1px solid var(--border);
             position: sticky;
             top: 0;
             z-index: 50;
-            backdrop-filter: blur(10px);
         }
 
         .nav-content {
             display: flex;
             justify-content: center;
-            padding: 1rem 0;
+            padding: 0.85rem 0;
         }
 
         .nav-links {
             display: flex;
-            gap: 2rem;
+            gap: 0.25rem;
             flex-wrap: wrap;
         }
 
         .nav-link {
-            color: var(--text-secondary);
+            color: var(--text-mid);
             text-decoration: none;
             font-weight: 500;
-            padding: 0.5rem 1rem;
-            border-radius: 0.375rem;
-            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            padding: 0.4rem 0.9rem;
+            border-radius: 1.5rem;
+            transition: all 0.2s ease;
         }
 
         .nav-link:hover {
-            color: var(--primary-color);
-            background: var(--surface);
+            color: var(--navy);
+            background: var(--orange-pale);
         }
 
-        /* Section Styles */
-        .section {
-            padding: 4rem 0;
-        }
-
-        .section:nth-child(even) {
-            background: var(--surface);
-        }
+        /* ── SECTIONS ── */
+        .section { padding: 5rem 0; }
+        .section-alt { background: var(--white); }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 700;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.9rem;
+            font-weight: 400;
             text-align: center;
             margin-bottom: 3rem;
-            color: var(--text-primary);
+            color: var(--navy);
             position: relative;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
-            bottom: -0.75rem;
+            bottom: -0.65rem;
             left: 50%;
             transform: translateX(-50%);
-            width: 4rem;
+            width: 3rem;
             height: 3px;
-            background: var(--primary-color);
+            background: var(--orange);
             border-radius: 2px;
         }
 
-        /* About Section */
+        /* ── ABOUT ── */
         .about-content {
-            max-width: 800px;
+            max-width: 720px;
             margin: 0 auto;
             text-align: center;
-            font-size: 1.125rem;
-            line-height: 1.7;
-            color: var(--text-secondary);
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: var(--text-mid);
         }
 
-        /* Experience Timeline */
-        .timeline {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 50%;
-            top: 0;
-            bottom: 0;
-            width: 2px;
-            background: var(--border);
-            transform: translateX(-50%);
-        }
-
-        .timeline-item {
-            position: relative;
-            margin-bottom: 3rem;
-            width: 100%;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content {
-            margin-left: 0;
-            margin-right: auto;
-            max-width: calc(50% - 2rem);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content {
-            margin-left: auto;
-            margin-right: 0;
-            max-width: calc(50% - 2rem);
-        }
-
-        .timeline-content {
-            background: var(--background);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            position: relative;
-        }
-
-        .timeline-item:nth-child(odd) .timeline-content::before {
-            content: '';
-            position: absolute;
-            right: -0.5rem;
-            top: 1.5rem;
-            width: 0;
-            height: 0;
-            border: 8px solid transparent;
-            border-left-color: var(--background);
-        }
-
-        .timeline-item:nth-child(even) .timeline-content::before {
-            content: '';
-            position: absolute;
-            left: -0.5rem;
-            top: 1.5rem;
-            width: 0;
-            height: 0;
-            border: 8px solid transparent;
-            border-right-color: var(--background);
-        }
-
-        .timeline-dot {
-            position: absolute;
-            left: 50%;
-            top: 1.5rem;
-            width: 1rem;
-            height: 1rem;
-            background: var(--primary-color);
-            border-radius: 50%;
-            transform: translateX(-50%);
-            border: 3px solid var(--background);
-            box-shadow: var(--shadow);
-        }
-
-        .timeline-title {
-            font-size: 1.25rem;
+        .about-content strong {
+            color: var(--navy);
             font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
         }
 
-        .timeline-company {
-            font-weight: 500;
-            color: var(--text-primary);
-            margin-bottom: 0.25rem;
-        }
-
-        .timeline-date {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .timeline-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            max-width: 1000px;
+        /* ── TIMELINE ── */
+        .timeline-wrapper {
+            max-width: 860px;
             margin: 0 auto;
         }
 
-        .skill-category {
-            background: var(--background);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-        }
-
-        .skill-category h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            text-align: center;
-        }
-
-        .skill-tags {
+        .timeline-group-label {
             display: flex;
-            flex-wrap: wrap;
+            align-items: center;
             gap: 0.75rem;
+            margin-bottom: 1.75rem;
+            margin-top: 3rem;
         }
 
-        .skill-tag {
-            background: var(--surface);
-            color: var(--text-primary);
-            padding: 0.5rem 1rem;
-            border-radius: 1.5rem;
-            font-size: 0.875rem;
-            font-weight: 500;
+        .timeline-group-label:first-child { margin-top: 0; }
+
+        .timeline-group-label span {
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0.3rem 0.9rem;
+            border-radius: 2rem;
+        }
+
+        .label-experience {
+            background: var(--orange-pale);
+            color: var(--orange);
+        }
+
+        .label-training {
+            background: #e8edf8;
+            color: var(--navy-mid);
+        }
+
+        .timeline-group-label::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .timeline-cards {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .timeline-card {
+            background: var(--white);
             border: 1px solid var(--border);
+            border-radius: 0.875rem;
+            padding: 1.75rem 2rem;
+            box-shadow: var(--shadow-sm);
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 0.25rem 1.5rem;
+            align-items: start;
+            transition: box-shadow 0.2s ease, transform 0.2s ease;
         }
 
-        /* Projects Grid */
+        .timeline-card:hover {
+            box-shadow: var(--shadow-md);
+            transform: translateY(-2px);
+        }
+
+        .timeline-card.training {
+            border-left: 3px solid var(--navy-light);
+        }
+
+        .timeline-card.experience {
+            border-left: 3px solid var(--orange);
+        }
+
+        .tc-role {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--navy);
+            margin-bottom: 0.15rem;
+        }
+
+        .tc-company {
+            font-size: 0.875rem;
+            color: var(--text-mid);
+            margin-bottom: 0.6rem;
+        }
+
+        .tc-desc {
+            font-size: 0.875rem;
+            color: var(--text-mid);
+            line-height: 1.65;
+            grid-column: 1 / -1;
+        }
+
+        .tc-date {
+            font-size: 0.8rem;
+            font-weight: 500;
+            color: var(--text-light);
+            white-space: nowrap;
+            text-align: right;
+            background: var(--cream);
+            padding: 0.25rem 0.65rem;
+            border-radius: 1rem;
+            height: fit-content;
+        }
+
+        /* ── PROJECTS ── */
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 1.5rem;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
         .project-card {
-            background: var(--background);
-            border-radius: 0.75rem;
+            background: var(--white);
+            border-radius: 1rem;
             overflow: hidden;
-            box-shadow: var(--shadow);
             border: 1px solid var(--border);
-            transition: all 0.3s ease;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-card:hover {
@@ -386,198 +372,168 @@
         }
 
         .project-header {
-            background: linear-gradient(135deg, var(--accent-color) 0%, var(--primary-color) 100%);
-            color: white;
             padding: 2rem;
-            text-align: center;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
         }
 
-        .project-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .project-header.exp { background: linear-gradient(135deg, var(--navy) 0%, var(--navy-mid) 100%); }
+        .project-header.training { background: linear-gradient(135deg, #2e4a6e 0%, #1a3352 100%); }
+        .project-header.aws { background: linear-gradient(135deg, var(--orange) 0%, #c85b28 100%); }
+        .project-header.tf { background: linear-gradient(135deg, #7b5ea7 0%, #5a3d82 100%); }
+
+        .project-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: 0.75rem;
+            background: rgba(255,255,255,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            flex-shrink: 0;
         }
+
+        .project-header-text { flex: 1; }
 
         .project-title {
-            font-size: 1.25rem;
+            font-size: 1.05rem;
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            color: var(--white);
+            margin-bottom: 0.25rem;
+        }
+
+        .project-subtitle {
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.6);
         }
 
         .project-content {
-            padding: 2rem;
+            padding: 1.5rem 2rem 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
         }
 
         .project-description {
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 1.5rem;
+            color: var(--text-mid);
+            font-size: 0.9rem;
+            line-height: 1.7;
+            margin-bottom: 1.25rem;
+            flex: 1;
         }
 
         .project-tech {
             display: flex;
             flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
+            gap: 0.4rem;
+            margin-bottom: 1.25rem;
         }
 
         .tech-tag {
-            background: var(--surface);
-            color: var(--primary-color);
-            padding: 0.25rem 0.75rem;
+            background: var(--cream);
+            color: var(--navy-mid);
+            padding: 0.2rem 0.65rem;
             border-radius: 1rem;
             font-size: 0.75rem;
             font-weight: 500;
+            border: 1px solid var(--border);
         }
 
         .project-link {
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
-            color: var(--primary-color);
+            gap: 0.4rem;
+            color: var(--orange);
             text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: gap 0.2s ease;
         }
 
-        .project-link:hover {
-            text-decoration: underline;
-        }
+        .project-link:hover { gap: 0.65rem; }
 
-        /* Certificates */
+        /* ── CERTIFICATES ── */
         .certificates-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 1.25rem;
             max-width: 1000px;
             margin: 0 auto;
         }
 
         .certificate-card {
-            background: var(--background);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow);
+            background: var(--white);
+            padding: 1.75rem;
+            border-radius: 0.875rem;
+            box-shadow: var(--shadow-sm);
             border: 1px solid var(--border);
-            text-align: center;
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            transition: box-shadow 0.2s ease;
         }
 
-        .certificate-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
+        .certificate-card:hover { box-shadow: var(--shadow-md); }
+
+        .cert-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 0.6rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
         }
+
+        .cert-icon.aws    { background: #fff3ec; }
+        .cert-icon.azure  { background: #eef2ff; }
+        .cert-icon.cisco  { background: #edfaf4; }
+        .cert-icon.huawei { background: #fff8ec; }
+
+        .cert-body {}
 
         .certificate-title {
-            font-size: 1.125rem;
+            font-size: 0.9rem;
             font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            color: var(--navy);
+            margin-bottom: 0.2rem;
         }
 
         .certificate-issuer {
-            color: var(--text-secondary);
-            font-style: italic;
-        }
-
-        /* Education */
-        .education-card {
-            background: var(--background);
-            padding: 3rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            max-width: 800px;
-            margin: 0 auto;
-            text-align: center;
-        }
-
-        .education-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--primary-color);
+            font-size: 0.8rem;
+            color: var(--text-light);
             margin-bottom: 0.5rem;
         }
 
-        .education-degree {
-            font-size: 1.125rem;
-            color: var(--text-primary);
-            margin-bottom: 0.5rem;
-        }
-
-        .education-period {
-            color: var(--text-secondary);
-            margin-bottom: 1rem;
-        }
-
-        .education-details {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
-        }
-
-        .education-detail {
-            text-align: center;
-        }
-
-        .education-detail-label {
-            font-size: 0.875rem;
-            color: var(--text-secondary);
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .education-detail-value {
+        .cert-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+            font-size: 0.78rem;
             font-weight: 600;
-            color: var(--primary-color);
+            color: var(--orange);
+            text-decoration: none;
+            transition: gap 0.2s ease;
         }
 
-        /* Languages */
-        .languages-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
+        .cert-link:hover { gap: 0.5rem; }
 
-        .language-card {
-            background: var(--background);
-            padding: 2rem;
-            border-radius: 0.75rem;
-            box-shadow: var(--shadow);
-            border: 1px solid var(--border);
-            text-align: center;
-        }
-
-        .language-name {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: var(--primary-color);
-            margin-bottom: 0.5rem;
-        }
-
-        .language-level {
-            color: var(--text-secondary);
-        }
-
-        /* Footer */
+        /* ── FOOTER ── */
         .footer {
-            background: var(--text-primary);
-            color: white;
-            padding: 3rem 0;
+            background: var(--navy);
+            color: var(--white);
+            padding: 3.5rem 0;
             text-align: center;
-        }
-
-        .footer-content {
-            max-width: 600px;
-            margin: 0 auto;
         }
 
         .footer-title {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.75rem;
+            font-weight: 400;
+            margin-bottom: 1.5rem;
         }
 
         .footer-links {
@@ -589,399 +545,322 @@
         }
 
         .footer-link {
-            color: white;
+            color: rgba(255,255,255,0.6);
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            font-size: 0.9rem;
+            transition: color 0.2s;
         }
 
-        .footer-link:hover {
-            opacity: 0.8;
-        }
+        .footer-link:hover { color: var(--orange-soft); }
 
         .footer-copyright {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.875rem;
+            color: rgba(255,255,255,0.3);
+            font-size: 0.8rem;
         }
 
-        /* Responsive Design */
+        /* ── RESPONSIVE ── */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2rem;
+            .hero h1 { font-size: 2rem; }
+
+            .timeline-card {
+                grid-template-columns: 1fr;
             }
 
-            .hero .subtitle {
-                font-size: 1.125rem;
-            }
+            .tc-date { text-align: left; }
 
-            .timeline::before {
-                left: 1rem;
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content,
-            .timeline-item:nth-child(even) .timeline-content {
-                margin-left: 3rem;
-                margin-right: 0;
-                max-width: calc(100% - 3rem);
-            }
-
-            .timeline-item:nth-child(odd) .timeline-content::before,
-            .timeline-item:nth-child(even) .timeline-content::before {
-                left: -0.5rem;
-                border-left-color: transparent;
-                border-right-color: var(--background);
-            }
-
-            .timeline-dot {
-                left: 1rem;
-            }
-
-            .nav-links {
-                gap: 1rem;
-            }
-
-            .contact-links {
-                gap: 1rem;
-            }
-
-            .education-details {
-                gap: 1rem;
-            }
+            .projects-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <div class="hero-avatar">HF</div>
-                <h1>Halil Furkan Damar</h1>
-                <p class="subtitle"></p>
-                <p class="location">📍 İstanbul, Turkey</p>
-                <div class="contact-links">
-                    <a href="mailto:halilfurkandamar@gmail.com" class="contact-link">
-                        📧 Email
-                    </a>
-                    <a href="tel:+905075682581" class="contact-link">
-                        📞 +90 507 568 2581
-                    </a>
-                    <a href="https://linkedin.com/in/halilfurkandamar" target="_blank" class="contact-link">
-                        💼 LinkedIn
-                    </a>
-                    <a href="https://github.com/frkndmr7" target="_blank" class="contact-link">
-                        🔗 GitHub
-                    </a>
-                    <a href="https://medium.com/@halil.furkan3530" target="_blank" class="contact-link">
-                        ✍️ Medium
-                    </a>
-                </div>
+
+<!-- ═══ HERO ═══ -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-content">
+            <div class="hero-avatar">HF</div>
+            <h1>Halil Furkan Damar</h1>
+            <p class="subtitle">Cloud | DevOps | SRE</p>
+            <div class="contact-links">
+                <a href="https://linkedin.com/in/halilfurkandamar" target="_blank" class="contact-link">💼 LinkedIn</a>
+                <a href="https://github.com/frkndmr7" target="_blank" class="contact-link">🔗 GitHub</a>
+                <a href="https://medium.com/@halil.furkan3530" target="_blank" class="contact-link">✍️ Medium</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Visitor Counter -->
-    <section class="visitor-counter-section">
-        <div class="container">
-            <div class="visitor-counter">
-                This page has been visited by <span id="visitor-counter" class="visitor-count">0</span> people
+<!-- ═══ VISITOR COUNTER ═══ -->
+<section class="visitor-counter-section">
+    <div class="container">
+        <div class="visitor-counter">
+            This page has been visited by <span id="visitor-counter" class="visitor-count">0</span> people
+        </div>
+    </div>
+</section>
+
+<!-- ═══ NAV ═══ -->
+<nav class="nav">
+    <div class="container">
+        <div class="nav-content">
+            <div class="nav-links">
+                <a href="#about" class="nav-link">About</a>
+                <a href="#projects" class="nav-link">Projects</a>
+                <a href="#certificates" class="nav-link">Certificates</a>
+                <a href="#training" class="nav-link">Training</a>
+                <a href="#experience" class="nav-link">Experience</a>
             </div>
         </div>
-    </section>
+    </div>
+</nav>
 
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="container">
-            <div class="nav-content">
-                <div class="nav-links">
-                    <a href="#about" class="nav-link">About</a>
-                    <a href="#experience" class="nav-link">Experience</a>
-                    <a href="#skills" class="nav-link">Skills</a>
-                    <a href="#projects" class="nav-link">Projects</a>
-                    <a href="#certificates" class="nav-link">Certificates</a>
-                    <a href="#education" class="nav-link">Education</a>
-                    <a href="#languages" class="nav-link">Languages</a>
+<!-- ═══ ABOUT ═══ -->
+<section id="about" class="section">
+    <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <p>I started my career in front-end development, and after my second year at university, I decided to progress in cybersecurity. With my growing interest in cloud computing, I began developing my skills in this area.</p>
+            <br>
+            <p>Therefore, I am highly motivated to contribute to roles related to <strong>Cloud and Cloud Security</strong>. I am committed to actively engaging in all processes that support this goal and giving my best effort throughout the journey.</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ PROJECTS ═══ -->
+<section id="projects" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Projects</h2>
+        <div class="projects-grid">
+
+            <div class="project-card">
+                <div class="project-header aws">
+                    <div class="project-icon-box">☁️</div>
+                    <div class="project-header-text">
+                        <p class="project-title">Cloud Resume Challenge</p>
+                        <p class="project-subtitle">Serverless Portfolio on AWS</p>
+                    </div>
+                </div>
+                <div class="project-content">
+                    <p class="project-description">A full-stack serverless portfolio website hosted on AWS, implementing modern cloud architecture patterns with a complete CI/CD pipeline via GitHub Actions.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS S3</span>
+                        <span class="tech-tag">CloudFront</span>
+                        <span class="tech-tag">DynamoDB</span>
+                        <span class="tech-tag">Lambda</span>
+                        <span class="tech-tag">API Gateway</span>
+                        <span class="tech-tag">SAM</span>
+                        <span class="tech-tag">GitHub Actions</span>
+                    </div>
+                    <a href="#" class="project-link">View Project →</a>
                 </div>
             </div>
-        </div>
-    </nav>
 
-    <!-- About Section -->
-    <section id="about" class="section">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>I started my career in front-end development, and after my second year at university, I decided to progress in cybersecurity. With my growing interest in cloud computing, I began developing my skills in this area.</p>
-                <br>
-                <p>Therefore, I am interested in all roles related to <strong>Cloud and Cloud Security</strong>. I am committed to actively engaging in all processes that support this goal and giving my best effort throughout the journey.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Experience Section -->
-    <section id="experience" class="section">
-        <div class="container">
-            <h2 class="section-title">Experience & Training</h2>
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Cyber Security Intern</h3>
-                        <p class="timeline-company">Disti Bilişim</p>
-                        <p class="timeline-date">July 2024 - August 2024</p>
-                        <p class="timeline-description">I received training on the SIEM Plus product, one of the products distributed by the company, and had the opportunity to observe the product in action.</p>
+            <div class="project-card">
+                <div class="project-header tf">
+                    <div class="project-icon-box">📻</div>
+                    <div class="project-header-text">
+                        <p class="project-title">Smart AI News Radio</p>
+                        <p class="project-subtitle">Serverless News Automation</p>
                     </div>
                 </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Cyber Security Intern</h3>
-                        <p class="timeline-company">Ecodation</p>
-                        <p class="timeline-date">August 2023 - September 2023</p>
-                        <p class="timeline-description">I documented and created comprehensive reports on the topics I learned during my internship (ISO 27001, Active Directory, Firewall, etc).</p>
+                <div class="project-content">
+                    <p class="project-description">A serverless news automation system built with AWS and Terraform that summarizes RSS feeds using AI and converts them into professional audio newsletters.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">AWS ECS Fargate</span>
+                        <span class="tech-tag">Bedrock</span>
+                        <span class="tech-tag">Polly</span>
+                        <span class="tech-tag">Terraform</span>
+                        <span class="tech-tag">GitHub Actions</span>
                     </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Technology Security Academy</h3>
-                        <p class="timeline-company">Garanti Technology</p>
-                        <p class="timeline-date">January 2025 - March 2025</p>
-                        <p class="timeline-description">I have received in-depth courses in areas such as Data Security, Endpoint Security, IAM, Anti-Fraud, Defensive & Offensive Security, Cloud Security, Application Security, SIEM, SOAR, CTI, Network Security, and Cryptology.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Cyber Security Analyst Program</h3>
-                        <p class="timeline-company">Akbank Youth Academy</p>
-                        <p class="timeline-date">January 2025 - May 2025</p>
-                        <p class="timeline-description">A comprehensive program consisting of Cyber Security Fundamentals, Linux, Network, and CyberOps courses.</p>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <h3 class="timeline-title">Huawei Cloud DevOps Bootcamp</h3>
-                        <p class="timeline-company">Huawei</p>
-                        <p class="timeline-date">May 2025 - August 2025</p>
-                        <p class="timeline-description">A 12-week intensive DevOps training program organized by Huawei, focusing on cloud technologies and automation.</p>
-                    </div>
+                    <a href="#" class="project-link">View Project →</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="section">
-        <div class="container">
-            <h2 class="section-title">Technical Skills</h2>
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <h3>☁️ Cloud Platforms</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">AWS EC2</span>
-                        <span class="skill-tag">AWS S3</span>
-                        <span class="skill-tag">AWS IAM</span>
-                        <span class="skill-tag">AWS VPC</span>
-                        <span class="skill-tag">AWS Lambda</span>
-                        <span class="skill-tag">Azure Fundamentals</span>
+            <div class="project-card">
+                <div class="project-header exp">
+                    <div class="project-icon-box">🐳</div>
+                    <div class="project-header-text">
+                        <p class="project-title">Microservices Calculator</p>
+                        <p class="project-subtitle">Containerized Calculation Platform</p>
                     </div>
                 </div>
-
-                <div class="skill-category">
-                    <h3>🛡️ Security & Networking</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">TCP/IP</span>
-                        <span class="skill-tag">DNS</span>
-                        <span class="skill-tag">Routing</span>
-                        <span class="skill-tag">Subnetting</span>
-                        <span class="skill-tag">Firewall</span>
-                        <span class="skill-tag">SIEM</span>
+                <div class="project-content">
+                    <p class="project-description">A modular microservices-based calculation platform featuring arithmetic, statistical analysis, and unit conversion services, deployed with Kubernetes and Ansible.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Docker</span>
+                        <span class="tech-tag">Kubernetes</span>
+                        <span class="tech-tag">Ansible</span>
+                        <span class="tech-tag">REST API</span>
                     </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>🐧 Systems & DevOps</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Linux</span>
-                        <span class="skill-tag">Docker</span>
-                        <span class="skill-tag">Kubernetes</span>
-                        <span class="skill-tag">Bash</span>
-                        <span class="skill-tag">System Administration</span>
-                    </div>
-                </div>
-
-                <div class="skill-category">
-                    <h3>💻 Development</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Python</span>
-                        <span class="skill-tag">JavaScript</span>
-                        <span class="skill-tag">Git & GitHub</span>
-                        <span class="skill-tag">Scripting</span>
-                        <span class="skill-tag">Automation</span>
-                    </div>
+                    <a href="#" class="project-link">View Project →</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-        <div class="container">
-            <h2 class="section-title">Featured Projects</h2>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">☁️</div>
-                        <h3 class="project-title">Cloud Resume Challenge</h3>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">A full-stack serverless portfolio website hosted on AWS, implementing modern cloud architecture patterns with CI/CD pipeline.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">AWS S3</span>
-                            <span class="tech-tag">CloudFront</span>
-                            <span class="tech-tag">DynamoDB</span>
-                            <span class="tech-tag">Lambda</span>
-                            <span class="tech-tag">API Gateway</span>
-                            <span class="tech-tag">GitHub Actions</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
+            <div class="project-card">
+                <div class="project-header training">
+                    <div class="project-icon-box">🤖</div>
+                    <div class="project-header-text">
+                        <p class="project-title">Teknofest 2024 — TUNGA</p>
+                        <p class="project-subtitle">AI Information Guessing Game</p>
                     </div>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🐳</div>
-                        <h3 class="project-title">Microservices Calculator</h3>
+                <div class="project-content">
+                    <p class="project-description">AI-powered information guessing game developed for Teknofest 2024. Served as project leader and frontend developer; the final report received 90 points.</p>
+                    <div class="project-tech">
+                        <span class="tech-tag">Artificial Intelligence</span>
+                        <span class="tech-tag">Machine Learning</span>
+                        <span class="tech-tag">Frontend Dev</span>
+                        <span class="tech-tag">Project Lead</span>
                     </div>
-                    <div class="project-content">
-                        <p class="project-description">A modular microservices-based calculation platform featuring arithmetic, statistical analysis, and unit conversion services with containerized deployment.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Docker</span>
-                            <span class="tech-tag">Kubernetes</span>
-                            <span class="tech-tag">Ansible</span>
-                            <span class="tech-tag">Microservices</span>
-                            <span class="tech-tag">REST API</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <div class="project-icon">🤖</div>
-                        <h3 class="project-title">Teknofest 2024 (TUNGA)</h3>
-                    </div>
-                    <div class="project-content">
-                        <p class="project-description">AI-powered information guessing game developed for Teknofest 2024. Served as project leader and frontend developer, delivering final presentation.</p>
-                        <div class="project-tech">
-                            <span class="tech-tag">Artificial Intelligence</span>
-                            <span class="tech-tag">Frontend Development</span>
-                            <span class="tech-tag">Project Management</span>
-                            <span class="tech-tag">Machine Learning</span>
-                        </div>
-                        <a href="#" class="project-link">View Project →</a>
-                    </div>
+                    <a href="#" class="project-link">View Project →</a>
                 </div>
             </div>
+
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Certificates Section -->
-    <section id="certificates" class="section">
-        <div class="container">
-            <h2 class="section-title">Certificates & Achievements</h2>
-            <div class="certificates-grid">
-                <div class="certificate-card">
-                    <div class="certificate-icon">🏆</div>
-                    <h3 class="certificate-title">Microsoft Certified: Azure Fundamentals</h3>
-                    <p class="certificate-issuer">Microsoft (AZ-900)</p>
+<!-- ═══ CERTIFICATES ═══ -->
+<section id="certificates" class="section">
+    <div class="container">
+        <h2 class="section-title">Certificates</h2>
+        <div class="certificates-grid">
+
+            <div class="certificate-card">
+                <div class="cert-icon aws">🏅</div>
+                <div class="cert-body">
+                    <p class="certificate-title">AWS Solutions Architect – Associate</p>
+                    <p class="certificate-issuer">Amazon Web Services</p>
+                    <a href="https://www.credly.com/badges/cedfb713-a0a7-4e64-8221-e1ac95188020/public_url" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
+            </div>
 
-                <div class="certificate-card">
-                    <div class="certificate-icon">🛡️</div>
-                    <h3 class="certificate-title">CyberOps Associate</h3>
+            <div class="certificate-card">
+                <div class="cert-icon aws">☁️</div>
+                <div class="cert-body">
+                    <p class="certificate-title">AWS Cloud Practitioner</p>
+                    <p class="certificate-issuer">Amazon Web Services</p>
+                    <a href="https://www.credly.com/badges/bf68d64a-c712-4bf0-ae38-95caa61cfce0/public_url" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <div class="cert-icon azure">🔷</div>
+                <div class="cert-body">
+                    <p class="certificate-title">Azure Fundamentals (AZ-900)</p>
+                    <p class="certificate-issuer">Microsoft</p>
+                    <a href="https://learn.microsoft.com/en-us/users/halilfurkandamar-7452/credentials/64565ed9ca74fcf6" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <div class="cert-icon huawei">🌐</div>
+                <div class="cert-body">
+                    <p class="certificate-title">HCCDA – Tech Essentials</p>
+                    <p class="certificate-issuer">Huawei</p>
+                    <a href="https://drive.google.com/file/d/13kmJzKK5Cj8jdSovIuZSchjiKeGHf_XI/view" target="_blank" class="cert-link">View Certificate →</a>
+                </div>
+            </div>
+
+            <div class="certificate-card">
+                <div class="cert-icon cisco">🛡️</div>
+                <div class="cert-body">
+                    <p class="certificate-title">CyberOps Associate</p>
                     <p class="certificate-issuer">Cisco</p>
+                    <a href="https://sg.docs.wps.com/module/common/loadPlatform/?sid=sIPOW9YnvAYDvp8IG&v=v2" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
+            </div>
 
-                <div class="certificate-card">
-                    <div class="certificate-icon">🌐</div>
-                    <h3 class="certificate-title">CCNA: Introduction to Networks</h3>
+            <div class="certificate-card">
+                <div class="cert-icon cisco">🌐</div>
+                <div class="cert-body">
+                    <p class="certificate-title">CCNA: Introduction to Networks</p>
                     <p class="certificate-issuer">Cisco</p>
-                </div>
-
-                <div class="certificate-card">
-                    <div class="certificate-icon">🔒</div>
-                    <h3 class="certificate-title">Technology Security Academy 301</h3>
-                    <p class="certificate-issuer">Garanti Technology</p>
+                    <a href="https://sg.docs.wps.com/module/common/loadPlatform/?sid=sIDyW9YnvAbntp8IG&v=v2" target="_blank" class="cert-link">View Certificate →</a>
                 </div>
             </div>
-        </div>
-    </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
-        <div class="container">
-            <h2 class="section-title">Education</h2>
-            <div class="education-card">
-                <h3 class="education-title">Konya Food And Agriculture University</h3>
-                <p class="education-degree">Bachelor of Science in Computer Engineering</p>
-                <p class="education-period">September 2020 - July 2025</p>
-                <div class="education-details">
-                    <div class="education-detail">
-                        <p class="education-detail-label">GPA</p>
-                        <p class="education-detail-value">3.19</p>
+        </div>
+    </div>
+</section>
+
+<!-- ═══ TRAINING ═══ -->
+<section id="training" class="section section-alt">
+    <div class="container">
+        <h2 class="section-title">Trainings & Bootcamps</h2>
+        <div class="timeline-wrapper">
+            <div class="timeline-cards">
+
+                <div class="timeline-card training">
+                    <div>
+                        <p class="tc-role">Huawei Cloud DevOps Bootcamp</p>
+                        <p class="tc-company">Huawei</p>
                     </div>
-                    <div class="education-detail">
-                        <p class="education-detail-label">Preparation</p>
-                        <p class="education-detail-value">1 Year English</p>
+                    <span class="tc-date">May 2025 – Aug 2025</span>
+                    <p class="tc-desc">A 12-week intensive DevOps training program organized by Huawei, focusing on cloud technologies and automation.</p>
+                </div>
+
+                <div class="timeline-card training">
+                    <div>
+                        <p class="tc-role">Cyber Security Analyst Program</p>
+                        <p class="tc-company">Akbank Youth Academy</p>
                     </div>
-                    <div class="education-detail">
-                        <p class="education-detail-label">Status</p>
-                        <p class="education-detail-value">Graduated</p>
+                    <span class="tc-date">Jan 2025 – May 2025</span>
+                    <p class="tc-desc">A comprehensive program consisting of Cyber Security Fundamentals, Linux, Network, and CyberOps courses.</p>
+                </div>
+
+                <div class="timeline-card training">
+                    <div>
+                        <p class="tc-role">Technology Security Academy</p>
+                        <p class="tc-company">Garanti Technology</p>
                     </div>
+                    <span class="tc-date">Jan 2025 – Mar 2025</span>
+                    <p class="tc-desc">In-depth courses covering Data Security, Endpoint Security, IAM, Anti-Fraud, Defensive & Offensive Security, Cloud Security, Application Security, SIEM, SOAR, CTI, Network Security, and Cryptology.</p>
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Languages Section -->
-    <section id="languages" class="section">
-        <div class="container">
-            <h2 class="section-title">Languages</h2>
-            <div class="languages-grid">
-                <div class="language-card">
-                    <h3 class="language-name">🇹🇷 Turkish</h3>
-                    <p class="language-level">Native</p>
+<!-- ═══ EXPERIENCE ═══ -->
+<section id="experience" class="section">
+    <div class="container">
+        <h2 class="section-title">Experience</h2>
+        <div class="timeline-wrapper">
+            <div class="timeline-cards">
+
+                <div class="timeline-card experience">
+                    <div>
+                        <p class="tc-role">Cyber Security Intern</p>
+                        <p class="tc-company">Disti Bilişim</p>
+                    </div>
+                    <span class="tc-date">Jul 2024 – Aug 2024</span>
+                    <p class="tc-desc">I received training on the SIEM Plus product, one of the products distributed by the company, and had the opportunity to observe the product in action.</p>
                 </div>
-                <div class="language-card">
-                    <h3 class="language-name">🇺🇸 English</h3>
-                    <p class="language-level">Professional Working Proficiency</p>
+
+                <div class="timeline-card experience">
+                    <div>
+                        <p class="tc-role">Cyber Security Intern</p>
+                        <p class="tc-company">Ecodation</p>
+                    </div>
+                    <span class="tc-date">Aug 2023 – Sep 2023</span>
+                    <p class="tc-desc">I documented and created comprehensive reports on the topics I learned during my internship (ISO 27001, Active Directory, Firewall, etc.).</p>
                 </div>
+
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <h3 class="footer-title">Let's Connect</h3>
-                <div class="footer-links">
-                    <a href="mailto:halilfurkandamar@gmail.com" class="footer-link">Email</a>
-                    <a href="https://linkedin.com/in/halilfurkandamar" target="_blank" class="footer-link">LinkedIn</a>
-                    <a href="https://github.com/frkndmr7" target="_blank" class="footer-link">GitHub</a>
-                    <a href="https://medium.com/@halil.furkan3530" target="_blank" class="footer-link">Medium</a>
-                </div>
-                <p class="footer-copyright">© 2025 Halil Furkan Damar.</p>
-            </div>
+<!-- ═══ FOOTER ═══ -->
+<footer class="footer">
+    <div class="container">
+        <h3 class="footer-title">Let's Connect</h3>
+        <div class="footer-links">
+            <a href="/cdn-cgi/l/email-protection#cda5aca1a4a1abb8bfa6aca3a9aca0acbf8daaa0aca4a1e3aea2a0" class="footer-link">Email</a>
+            <a href="https://linkedin.com/in/halilfurkandamar" target="_blank" class="footer-link">LinkedIn</a>
+            <a href="https://github.com/frkndmr7" target="_blank" class="footer-link">GitHub</a>
+            <a href="https://medium.com/@halil.furkan3530" target="_blank" class="footer-link">Medium</a>
         </div>
-    </footer>
-
-    <script src="app.js"></script>
-</body>
-</html>
+        <p class="footer-copyright">©</p>
